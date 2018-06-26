@@ -1,0 +1,15 @@
+:root{
+    --menu-background-color: #2791E9;
+    --menu-hover:#0B81E3;
+    --content-background-color: #202225; /*333B42*/
+    --title-background-color:#4EA5ED;
+    --title-color: black;
+    --text-color: white;
+    --confirm-button-color: #0B83E6;
+    --input-background-color: #4EA5ED;
+    --generated-html-background-color:#4f4f4f;
+    --edit-button:#FFC000;
+    --delete-button:#FF4C00;
+    --font-size: 3vw;
+    --font-size-mobile: 3.3vw;
+}

@@ -1,0 +1,11 @@
+{
+  "name": "rebound_arena",
+  "description": "Projecto da UC PI",
+  "version": "1.0.0",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  },
+  "license": "MIT"
+}

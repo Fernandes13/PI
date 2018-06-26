@@ -1,0 +1,10 @@
+https://www.flaticon.com/free-icon/online-game_180527#term=online gaming&page=1&position=7
+
+layout: Featured Photo
+https://designshack.net/articles/layouts/10-rock-solid-website-layout-examples/
+
+Css animations on Scroll
+https://codepen.io/benoitboucart/pen/yJoqz
+https://stackoverflow.com/questions/28307625/how-to-trigger-css-animation-both-on-scrolling-down-and-up
+exemplos: 1.3.4.5:
+https://css-tricks.com/aos-css-driven-scroll-animation-library/

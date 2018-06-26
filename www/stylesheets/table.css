@@ -1,0 +1,225 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60%;
+  margin-left: 20%;
+  background-color: var(--generated-html-background-color);
+  box-shadow: 0 0 10px var(--title-background-color);
+}
+
+td,
+th {
+  border: 3px solid black;
+  text-align: center;
+  padding: 1.5%;
+}
+
+th {
+  background-color: var(--menu-background-color);
+  color: black;
+  border: 3px solid black;
+}
+
+tr:hover {
+  background-color: var(--menu-hover);
+  cursor: pointer;
+}
+
+.selected {
+  background-color: var(--menu-hover);
+}
+
+#operators {
+  display: inline-flex;
+  position: fixed;
+  margin-left: -0.5%;
+  width: 100%;
+  bottom: 0;
+  padding-top: 1%;
+  background-color: var(--generated-html-background-color);
+  border: 2px solid black;
+  box-shadow: 0 0 10px var(--title-background-color);
+  font-size: 1.2em;
+}
+
+#checkbox{
+  margin-left: 20%;
+  margin-right: 10%;
+}
+
+#buttons {
+  margin-bottom: 1%;
+  width: 20%;
+  display: inline-block;
+}
+
+#buttons button {
+  margin-right: 5%;
+  padding: 5%;
+  border-width: 2px;
+  border-style: solid;
+  background-color: var(--generated-html-background-color);
+  border-radius: 5%;
+  font-size: 1em;
+}
+
+#createButton {
+  border-color: var(--menu-background-color);
+  color: var(--menu-background-color);
+}
+
+#createButton:hover {
+  background-color: var(--menu-background-color);
+  color: white;
+  cursor: pointer;
+}
+
+#editButton {
+  border-color: var(--edit-button);
+  color: var(--edit-button);
+}
+
+#editButton:hover {
+  background-color: var(--edit-button);
+  color: white;
+  cursor: pointer;
+}
+
+#deleteButton {
+  border-color: var(--delete-button);
+  color: var(--delete-button);
+}
+
+#deleteButton:hover {
+  background-color: var(--delete-button);
+  color: white;
+  cursor: pointer;
+}
+
+#checkbox input[type="checkbox"] + label{
+  display: block;
+  margin: 0.2em;
+  cursor: pointer;
+  padding: 0.2em;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance:none;
+}
+
+#checkbox input[type="checkbox"] {
+  display: none;
+}
+
+#checkbox input[type="checkbox"] + label:before {
+  content: "\2714";
+  border: 0.1em solid black;
+  border-radius: 0.2em;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  padding-left: 0.2em;
+  padding-bottom: 0.3em;
+  margin-right: 0.2em;
+  vertical-align: bottom;
+  color: transparent;
+  transition: 0.2s;
+}
+
+#checkbox input[type="checkbox"] + label:active:before {
+  transform: scale(0);
+}
+
+#checkbox input[type="checkbox"]:checked + label:before {
+  background-color: var(--menu-background-color);
+  border-color: black;
+  color: black;
+}
+
+#checkbox label {
+  margin-top: 0;
+}
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+  table{
+    margin-top: 10%;
+    margin-bottom: 50%;
+  }
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+  /*tr { border: 1px solid black;}*/
+
+	
+	td { 
+		/* Behave  like a "row" */
+    border: none;
+    border-top: 1px solid black;
+		/*border-bottom: 1px solid black; */
+		position: relative;
+		padding-left: 35%; 
+	}
+	
+	td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 0%;
+    left: 0%;
+		width: 30%; 
+    padding-right: 4%;
+    padding-bottom: 1.6%;
+    padding-top: 1.8%;
+    white-space: nowrap;
+    background-color: var(--menu-background-color);
+    color: black;
+    /*border-top: 1px solid black;
+    border-bottom: 1px solid black;*/
+  }
+  
+  #Player  td:nth-of-type(4){
+    border-bottom: 1px solid black;
+  }
+	
+	/*
+	Label the data
+	*/
+	#Player  td:nth-of-type(1):before { content: "Name"; border-top:none; border-right: 2px solid black;font-weight: bold;}
+	#Player  td:nth-of-type(2):before { content: "Age"; border-right: 2px solid black;font-weight: bold;}
+	#Player  td:nth-of-type(3):before { content: "Country"; border-right: 2px solid black;font-weight: bold;}
+  #Player  td:nth-of-type(4):before { content: "Genre"; padding-bottom: 1.2%; border-right: 2px solid black;font-weight: bold;}
+  
+  #GameSession td:nth-of-type(1):before { content: "Start Date"; font-weight: bold;}
+  #GameSession td:nth-of-type(2):before { content: "Description"; border-bottom: none;font-weight: bold;}
+  #GameSession td:nth-of-type(3):before { content: "Player 1"; font-weight: bold;}
+  #GameSession td:nth-of-type(4):before { content: "Player 2"; border-bottom: none;font-weight: bold;}
+	#GameSession td:nth-of-type(5):before { content: "Winner"; font-weight: bold;}
+
+	td:nth-of-type(8):before { content: "Dream Vacation City"; }
+	td:nth-of-type(9):before { content: "GPA"; }
+  td:nth-of-type(10):before { content: "Arbitrary Data"; }
+  
+  #operators{
+    margin-left: 0;
+  }
+
+  #checkbox{
+    margin-left: 0;
+    margin-right: 20%;
+  }
+
+  #buttons{
+    display: inherit;
+  }
+}

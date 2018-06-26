@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="stylesheets/site.css" />
+    <link rel="stylesheet" href="stylesheets/jquery-ui.min.css" />
+
+    <script type="application/javascript" src="scripts/DOMManager.js"> </script>
+    <script type="application/javascript" src="scripts/Entities.js"> </script>
+    <script type="application/javascript" src="scripts/ObjectsManager.js"> </script>
+    <script type="application/javascript" src="scripts/jquery-3.3.1.min.js"></script>
+    <script type="application/javascript" src="scripts/ChartGenerator.js"></script>
+    <script type="application/javascript" src="scripts/canvasjs.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <title>Rebound Arena</title>
+</head>
+
+<body>
+    <div id="respNav">
+        <a href="http://localhost:8081/" onclick="toggleCross(nav-icon)">
+            <img src="images/bigIcon.png" />
+            <h3 href="index.html">Rebound Arena</h3>
+        </a>
+        <div id="nav-icon" name="nav-icon" onclick="toggleCross(this);">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+    </div>
+    <section id="section1">
+        <h1>Rebound Arena</h1>
+        <a href="http://localhost:8081/">
+            <img id="logo" src="images/bigIcon.png" />
+        </a>
+        <nav>
+            <ul>
+                <li id="menuGames" onclick="players(event,true);">Players</li>
+                <li id="menuTeams" onclick="gameSessions(event,true);">Game Sessions</li>
+                <li id="menuContacts" onclick="statistics(event,true);">Statistics</li>
+            </ul>
+        </nav>
+        <div id="redes">
+            <a href="http://facebook.com" target="_blank">
+                <img src="images/facebook.png" />
+            </a>
+            <a href="http://instagram.com" target="_blank">
+                <img src="images/instagram.png" />
+            </a>
+            <a href="http://twitter.com" target="_blank">
+                <img src="images/twitter.png" />
+            </a>
+            <a href="http://linkedin.com" target="_blank">
+                <img src="images/linkedin.png" />
+            </a>
+            <a href="http://youtube.com" target="_blank">
+                <img src="images/youtube.png" />
+            </a>
+            <a href="http://twitch.tv" target="_blank">
+                <img src="images/twitch.png" />
+            </a>
+            <hr>
+        </div>
+        <footer>
+            Rebound Arena&copy; 2018
+        </footer>
+    </section>
+    <section id="section2">
+
+
+        <h1 id="titulo">Rebound Arena</h1>
+        <div id="hot">
+            <p>
+                É um jogo de tiros multiplayer (jogado em LAN), em que o objetivo é simplesmente vencer o adversário numa intensa batalha
+                1 contra 1 numa arena quadrada.
+            </p>
+            <p> Cada jogador tem uma barra de vida e uma barra de escudo e, aleatoriamente na arena surgem pequenos extras que
+                podem auxiliar quem os apanha a sair vitoriosos do combate. Para tornar o jogo mais empolgante e agitado
+                as balas podem ser refratidas nas paredes da arena, desaparecendo apenas após o terceiro embate.
+            </p>
+            <p>
+                É de notar que o escudo tem duração e tem um tempo para voltar a carregar.
+            </p>
+
+        </div>
+
+        <iframe id="topVideo" src="https://www.youtube.com/embed/xxJSJEwTmM4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+            scrolling="no" onload="javascript:createCharts();"></iframe>
+
+        <section class="section3">
+            <div class="news" id="news1" onclick="statistics(event,true);">
+                <!--<img src="images/fortnite.jpg" />-->
+            </div>
+            <div class="news" id="news2" onclick="statistics(event,true);">
+                <!-- <img src="images/csgo.png" />-->
+            </div>
+            <div class="news" id="news3" onclick="statistics(event,true);">
+                <!--<img src="images/lol.jpg" />-->
+            </div>
+            <div class="news" id="news4" onclick="statistics(event,true);">
+                <!--<img src="images/rl.jpg" />-->
+            </div>
+            
+        </section>
+
+        <!--<div id="popUp">Parabéns está do *****!</div>-->
+    </section>
+</body>
+
+</html>
