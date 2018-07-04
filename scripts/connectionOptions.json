@@ -1,6 +1,6 @@
 {
     "host": "localhost",
     "user": "root",
-    "database": "ReboundArenaDB",
+    "database": "pookiedb",
     "password": "root"
 }

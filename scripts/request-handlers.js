@@ -7,10 +7,10 @@ const options = require("./connectionOptions.json");
  * @param {*} req 
  * @param {*} res 
  */
-function getPlayer(req, res) {
+function getPlayers(req, res) {
     var connection = mysql.createConnection(options);
     connection.connect();
-    var query = "SELECT player_id, player_name, player_birthDate, player_country, player_gender FROM Player";
+    var query = "SELECT * FROM player";
     connection.query(query, function (err, rows) {
         if (err) {
             res.json({ "Erro": true, "Message": "Error MySQL query to Player table" });
@@ -35,10 +35,10 @@ function createUpdatePlayer(req, res) {
     var gender = (req.body.gender) ? req.body.gender : null;
     var sql;
     if (req.method === "PUT") {
-        sql = mysql.format("UPDATE Player SET player_name=?, player_birthdate=?, player_country=?, player_gender=? WHERE player_id=?", [name, birthDate, idCountry, gender, req.params.id]);
+        sql = mysql.format("UPDATE Player SET player_name=?, player_country=?, player_gender=?, player_birthdate=? WHERE player_id=?", [name, idCountry, gender, birthDate, req.params.id]);
     } else {
         if (req.method === "POST") {
-            sql = mysql.format("INSERT INTO Player (player_name, player_birthdate, player_country, player_gender) VALUES (?,?,?,?)", [name, birthDate, idCountry, gender]);
+            sql = mysql.format("INSERT INTO Player (player_name, player_country, player_gender, player_birthdate) VALUES (?,?,?,?)", [name, idCountry, gender, birthDate]);
         }
     }
     connection.query(sql,function (err, rows, fields) {
@@ -81,7 +81,7 @@ function removePlayer(req, res) {
 function getGameSessions(req, res) {
     var connection = mysql.createConnection(options);
     connection.connect();
-    var query = "SELECT game_id, game_date, game_description, player1_id, player2_id, winner_id FROM GameSession";
+    var query = "SELECT game_id, game_date, player_id, game_description FROM GameSession";
     connection.query(query, function (err, rows) {
         if (err) {
             res.json({ "Erro": true, "Message": "Error MySQL query to GameSession table" });
@@ -102,15 +102,13 @@ function createUpdateSession(req, res) {
     connection.connect();
     var description = req.body.description;
     var date = (req.body.date) ? req.body.date : null;
-    var idPlayer1 = (req.body.idPlayer1) ? req.body.idPlayer1 : null;
-    var idPlayer2 = (req.body.idPlayer2) ? req.body.idPlayer2 : null;
-    var idWinner = (req.body.idWinner) ? req.body.idWinner : null;
+    var idPlayer = (req.body.idPlayer) ? req.body.idPlayer : null;
     var sql;
     if (req.method === "PUT") {
-        sql = mysql.format("UPDATE GameSession SET game_date = ?, game_description = ?, player1_id = ?, player2_id = ?, winner_id = ? WHERE game_id=?", [date,description,idPlayer1,idPlayer2, idWinner, req.params.id]);
+        sql = mysql.format("UPDATE GameSession SET game_date = ?, player_id = ?, game_description = ? WHERE game_id=?", [date, idPlayer, description, req.params.id]);
     } else {
         if (req.method === "POST") {
-            sql = mysql.format("INSERT INTO GameSession (game_date, game_description, player1_id, player2_id, winner_id) VALUES (?,?,?,?)", [date, description, idPlayer1, idPlayer2, idWinner]);
+            sql = mysql.format("INSERT INTO GameSession (game_date, game_description, player_id,) VALUES (?,?,?)", [date, description, idPlayer]);
         }
     }
     connection.query(sql,function (err, rows, fields) {
@@ -146,7 +144,7 @@ function removeSession(req, res) {
 }
 
 
-module.exports.getPlayer = getPlayer;
+module.exports.getPlayers = getPlayers;
 module.exports.getGameSessions = getGameSessions;
 module.exports.createUpdatePlayer = createUpdatePlayer;
 module.exports.removePlayer = removePlayer;

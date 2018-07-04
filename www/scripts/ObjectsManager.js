@@ -1,6 +1,6 @@
 var playersList = [];
 
-let player = new Player("JoséPedroBorges", "July,20,1994","Portugal","Male",null);
+/*let player = new Player("JoséPedroBorges", "July,20,1994","Portugal","Male",null);
 playersList.push(player);
 let player2 = new Player("RosalinaGabriel", "December,20,1985","Portugal","Male",null);
 playersList.push(player2);
@@ -17,7 +17,7 @@ playersList.push(player7);
 let player8 = new Player("MarcosLetras", "November,20,1984","Portugal","Male",null);
 playersList.push(player8);
 let player9 = new Player("PedroSimões", "May,20,1984","Portugal","Male",null);
-playersList.push(player9);
+playersList.push(player9);*/
 
 var indexSelected = [];
 var activeTable = "";

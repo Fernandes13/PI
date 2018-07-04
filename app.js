@@ -14,12 +14,14 @@ app.get("/", function(req,res){
     res.sendFile(path.join(__dirname, "/", "index.html"));
 });
 
-app.get("/person", requestHandlers.getPlayer);
-app.get("/country", requestHandlers.getGameSessions);
-app.post("/person", requestHandlers.createUpdatePlayer);
-app.put("/person/:id", requestHandlers.createUpdateSession);
-app.delete("/person/:id", requestHandlers.removePlayer);
-app.delete("/person/:id", requestHandlers.removeSession);
+app.get("/players", requestHandlers.getPlayers);
+/*app.post("/player", requestHandlers.createUpdatePlayer);
+app.put("/player/:id", requestHandlers.createUpdatePlayer);
+app.delete("/player/:id", requestHandlers.removePlayer);
+app.get("/gameSessions", requestHandlers.getGameSessions);
+app.post("/gameSession", requestHandlers.createUpdateSession);
+app.put("/gameSession/:id", requestHandlers.createUpdateSession);
+app.delete("/gameSession/:id", requestHandlers.removeSession);*/
 
 app.listen(8081, function () {
     console.log("Server running at http://localhost:8081");

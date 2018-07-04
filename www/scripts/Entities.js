@@ -1,9 +1,9 @@
-function Player (name,birthDate,country, gender, statistics){
+function Player (id,name,country, gender,birthDate){
+    this.id = id;
     this.name = name;
-    this.birthDate = new Date(birthDate);
     this.country = country;
     this.gender = gender;
-    Object.defineProperty(this,"statistic",{enumerable:false, writable:true, value:statistics || []});
+    this.birthDate = new Date(birthDate);
 }
 
 Player.prototype.toString = function(){
@@ -11,7 +11,8 @@ Player.prototype.toString = function(){
 }
 
 
-function GameSession(startDate,description,player1,player2, winner){
+function GameSession(id,startDate,description,player1,player2, winner){
+    this.id = id;
     this.startDate = new Date(startDate); //obrigatório
     this.description = description;
     this.player1 = player1; //obrigatório
@@ -19,7 +20,8 @@ function GameSession(startDate,description,player1,player2, winner){
     this.winner = winner || null;
 }
 
-function StatisticType(name,description){
+function StatisticType(id,name,description){
+    this.id = id;
     this.name = name;
     this.description = description;
 }
@@ -28,13 +30,15 @@ StatisticType.prototype.toString = function(){
     return this.name;
 }
 
-function Statistic(value,statisticType,player){
+function Statistic(id,value,statisticType,player){
+    this.id = id;
     this.player = player;
     this.value = value;
     this.statisticType = statisticType;  
 }
 
-function StatisticPlayer(player,damageDealt,damageAbsorbed,accuracy,pickups,victories){
+function StatisticPlayer(id,player,damageDealt,damageAbsorbed,accuracy,pickups,victories){
+    this.id = id;
     this.player = player;
     this.damageDealt = damageDealt;
     this.damageAbsorbed = damageAbsorbed; 

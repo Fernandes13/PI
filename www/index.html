@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="stylesheets/site.css" />
     <link rel="stylesheet" href="stylesheets/jquery-ui.min.css" />
 
+    <script type="application/javascript" src="scripts/Ajax.js"> </script>
     <script type="application/javascript" src="scripts/DOMManager.js"> </script>
     <script type="application/javascript" src="scripts/Entities.js"> </script>
     <script type="application/javascript" src="scripts/ObjectsManager.js"> </script>
@@ -16,14 +17,14 @@
     <script type="application/javascript" src="scripts/canvasjs.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
-    <title>Rebound Arena</title>
+    <title>Pookie's Adventures</title>
 </head>
 
-<body>
+<body onload="javascript: loadPlayers();">
     <div id="respNav">
         <a href="http://localhost:8081/" onclick="toggleCross(nav-icon)">
             <img src="images/bigIcon.png" />
-            <h3 href="index.html">Rebound Arena</h3>
+            <h3 href="index.html">Pookie's Adventures</h3>
         </a>
         <div id="nav-icon" name="nav-icon" onclick="toggleCross(this);">
             <span></span>
@@ -32,7 +33,7 @@
         </div> 
     </div>
     <section id="section1">
-        <h1>Rebound Arena</h1>
+        <h1>Pookie's Adventures</h1>
         <a href="http://localhost:8081/">
             <img id="logo" src="images/bigIcon.png" />
         </a>
@@ -65,29 +66,29 @@
             <hr>
         </div>
         <footer>
-            Rebound Arena&copy; 2018
+            Pookie's Adventures&copy; 2018
         </footer>
     </section>
     <section id="section2">
 
 
-        <h1 id="titulo">Rebound Arena</h1>
+        <h1 id="titulo">Pookie's Adventures</h1>
         <div id="hot">
             <p>
-                É um jogo de tiros multiplayer (jogado em LAN), em que o objetivo é simplesmente vencer o adversário numa intensa batalha
-                1 contra 1 numa arena quadrada.
+                O jogo baseia-se à volta de Pookie, um valente gatinho que fora raptado por um grupo de ratos malígnos e levado para um calabouço. 
+                Com o seu olhar laser e a sua espada ele defende-se e derrota os ratos malvados até, finalmente, conseguir chegar ao portal e passar para o nível seguinte do calabouço.
+                Durante a sua aventura, encontrará moedas mágias que poderão ser trocadas por itens que irão aumentar a sua força.
             </p>
-            <p> Cada jogador tem uma barra de vida e uma barra de escudo e, aleatoriamente na arena surgem pequenos extras que
-                podem auxiliar quem os apanha a sair vitoriosos do combate. Para tornar o jogo mais empolgante e agitado
-                as balas podem ser refratidas nas paredes da arena, desaparecendo apenas após o terceiro embate.
+            <p> Conseguirá o Pookie sair do calabouço? Irá ele encontrar o malvado Chefe dos Ratos? É um mistério, visto que os níveis são gerados aleatoriamente e indefinidamente.
+                Quando as três vidas são perdidas, game over! As moedas poderão ser trocadas por upgrades ao dano do Pookie!
             </p>
             <p>
-                É de notar que o escudo tem duração e tem um tempo para voltar a carregar.
-            </p>
-
+                    Adicionalmente, há caixas que poderão ser partidas! O que será que guardam? 
+            </p> 
+    
         </div>
 
-        <iframe id="topVideo" src="https://www.youtube.com/embed/xxJSJEwTmM4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
+        <iframe id="topVideo" src="https://www.youtube.com/embed/AIn3UGZZKLU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen
             scrolling="no" onload="javascript:createCharts();"></iframe>
 
         <section class="section3">
